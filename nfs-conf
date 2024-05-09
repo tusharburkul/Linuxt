@@ -1,0 +1,43 @@
+## NFS-SERVER_SIDE_CONFIGURATIO
+ apt install nfs-utils libnfsidmap
+  sudo apt install nfs-kernel-server
+  sudo systemctl start rpcbind.service nfs-server.service rpc-statd.service nfs-idmapd.service
+  sudo systemctl status rpcbind.service nfs-server.service rpc-statd.service nfs-idmapd.service
+  sudo systemctl enable rpcbind.service nfs-server.service rpc-statd.service nfs-idmapd.service
+  sudo systemctl restart rpcbind.service nfs-server.service rpc-statd.service nfs-idmapd.service
+  sudo systemctl status rpcbind.service nfs-server.service rpc-statd.service nfs-idmapd.service
+
+  sudo mkdir /server
+  mkdir /server/apps
+  sudo mkdir /server/apps
+  chmod 777 /server/
+  sudo chmod 777 /server/
+  sudo chmod 777 /server/apps/
+  ls -ld /server/
+  ls -ld /server/apps/
+  vi /etc/exports
+  sudo vi /etc/exports
+  exportfs -rv
+  sudo exportfs -rv
+  sudo systemctl stop firewalld.service
+  ifconfig
+  cd server/apps/
+  pwd
+  touch my-serverfile.txt
+  ls
+  cat my-serverfile.txt
+
+  ###CLIENT_SIDE_CONFIGURATION
+
+
+sudo apt install nfs-common
+sudo systemctl start rpc-bind
+sudo systemctl enable  rpcbind
+sudo systemctl status  rpcbind
+systemctl stop firewalld.service
+ifconfig
+showmount -e 192.168.0.243(nfs-server-ip)
+mkdir /mnt/apps/
+sudo  mount 192.168.0.243:/server/apps /mnt/apps
+
+done !
